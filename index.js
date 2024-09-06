@@ -1,3 +1,5 @@
+//Created by Rui Goncalves Pereira
+
 const display = document.getElementById("display");
 
 function appendToDisplay(input) {
@@ -6,7 +8,7 @@ function appendToDisplay(input) {
 
 function calculate() {
     let input = display.value;
-    let result = input.split(/(\+|\-|\*|\/)/) // Operators
+    let result = input.split(/(\+|\-|\*|\/|\%)/) // Operators
     let antwort = parseFloat(result[0]);
 
     for (let i = 1; i < result.length; i += 2) {
@@ -26,6 +28,9 @@ function calculate() {
                 break;
             case "/":
                 antwort /= nextNum;
+                break;
+            case "%":
+                antwort %= nextNum;
                 break;
         }
     }
